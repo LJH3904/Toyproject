@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Random_Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),ResultActivity.class);
+                Intent intent = new Intent(getApplicationContext(),CheckMenuActivity.class);
                 startActivity(intent);
                 finish();
 

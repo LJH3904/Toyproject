@@ -25,21 +25,30 @@ public class endactivity extends AppCompatActivity {
                 R.drawable.naemyun
         };
         String[] images_name = new String[]{
-                "햄버거",
-                "구내식당",
-                "만두국",
-                "중국음식",
+                "버거킹",
+                "법구",
+                "해월",
+                "금석궁",
                 "명가",
                 "순대국",
-                "돈까스",
-                "냉면"
+                "목동카츠",
+                "육쌈냉면"
         };
         TextView textView = findViewById(R.id.textView_end_result);
 
-        Intent get_Intent = new Intent(this.getIntent()); // ResultActivity에서 Intent 객체 받아옴
-        int i = get_Intent.getIntExtra("Result_imageId",1); // ResultActivity에서 putExtra 를 받아옴 기본값은 1로
+        Intent get_Intent = getIntent(); // ResultActivity에서 Intent 객체 받아옴
+        String winData = get_Intent.getStringExtra("Result_imageId"); // ResultActivity에서 putExtra 를 받아옴
         ImageView imageView_food = (ImageView) findViewById(R.id.imageView_end_result);
-        imageView_food.setBackgroundResource(images[i]);
-        textView.setText(images_name[i]);
+
+        for(int i = 0; i < 8; i++) {
+            if(winData.equals(images_name[i])) {
+                imageView_food.setBackgroundResource(images[i]);
+                TextView resultTextView = findViewById(R.id.textView_end_result);
+                resultTextView.setText(images_name[i]);
+            }
+        }
+
+        //imageView_food.setBackgroundResource(images[i]);
+        //textView.setText(images_name[i]);
     }
 }
