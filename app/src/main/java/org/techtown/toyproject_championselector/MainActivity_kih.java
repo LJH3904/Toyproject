@@ -58,7 +58,7 @@ MediaPlayer mediaPlayer;
             public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
                 TextView tv = (TextView)view.findViewById(android.R.id.text1);
-                tv.setTextColor(Color.GRAY);
+                tv.setTextColor(Color.WHITE);
                 return view;
             }
         };
