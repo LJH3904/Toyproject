@@ -16,8 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity_kih extends AppCompatActivity {
-    private ListView listView = null;
-    private ListViewAdapter  adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

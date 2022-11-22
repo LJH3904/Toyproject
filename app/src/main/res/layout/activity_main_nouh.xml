@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity_kih">
+    tools:context=".MainActivity_nouh">
 
     <TextView
         android:layout_width="195dp"
@@ -13,7 +13,7 @@
         android:layout_marginStart="108dp"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="김인항"
+        android:text="노은흠"
         android:textSize="50dp"
         android:gravity="center"
         android:textColor="@color/white"

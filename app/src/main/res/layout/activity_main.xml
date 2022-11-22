@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <Button
-        android:id="@+id/button_byh"
+        android:id="@+id/button_pyh"
         android:layout_width="112dp"
         android:layout_height="120dp"
         android:layout_marginStart="8dp"
@@ -92,7 +92,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/ljh"
 
-        app:layout_constraintStart_toEndOf="@+id/button_byh"
+        app:layout_constraintStart_toEndOf="@+id/button_pyh"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <Button
@@ -145,6 +145,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="7dp" />
+        app:layout_constraintGuide_begin="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
