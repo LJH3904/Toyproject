@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,7 @@ import java.util.List;
 public class MainActivity_kih extends AppCompatActivity {
 Button btn_play;
 Button btn_stop;
+    private Long mLastClickTime = 0L;
 
 MediaPlayer mediaPlayer;
 int voice_flag = 0;
@@ -50,6 +52,9 @@ int voice_flag = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_kih);
 
+
+        ImageView imageView = findViewById(R.id.imageView);
+
         Button changeBtn = (Button) findViewById(R.id.button4);
         ListView listView = findViewById(R.id.listView);
         List<String> list = new ArrayList<>();
@@ -66,41 +71,35 @@ int voice_flag = 0;
                 return view;
             }
         };
+
         listView.setAdapter(adapter);
-
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                if(voice_flag == 0) {
-                    if (position == 0) {
-                        voice_flag = 1;
-                        mediaPlayer =
-                                MediaPlayer.create(MainActivity_kih.this, R.raw.kih_1);
-                        mediaPlayer.start();
-                        //그럴수도 있긴해
-                        sleep(4000);
-                        voice_flag = 0;
-                    }
+                sleep(500);
+                if (position == 0) {
+                                    mediaPlayer = MediaPlayer.create(MainActivity_kih.this, R.raw.kih_1);
+                                    mediaPlayer.start();
+
+
+                        }
+                            //그럴수도 있긴해
                     if (position == 1) {
-                        voice_flag = 1;
+
                         mediaPlayer = MediaPlayer.create(MainActivity_kih.this, R.raw.kih_2);
                         mediaPlayer.start();
                         //네 !~
-                        sleep(3000);
-                        voice_flag = 0;
+
                     }
                     if (position == 2) {
-                        voice_flag = 1;
+
                         mediaPlayer = MediaPlayer.create(MainActivity_kih.this, R.raw.kih_3);
                         mediaPlayer.start();
                         //아 협박까지 당했다 ..
-                        sleep(4000);
-                        voice_flag = 0;
+
+
                     }
                 }
-            }
-
         });
 
         changeBtn.setOnClickListener(new View.OnClickListener() {
@@ -113,8 +112,7 @@ int voice_flag = 0;
 
             }
         });
-
-    }
+    }//onCreate
 
     ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -131,4 +129,4 @@ int voice_flag = 0;
             }
     );
 
-}
+    }
